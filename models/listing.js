@@ -1,4 +1,4 @@
-const mongoose=require('mongoose');
+ const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
 
 const listingSchema=new Schema({
@@ -10,7 +10,7 @@ const listingSchema=new Schema({
     image:{
         type:String,
         default:"default",
-        set:(v)=>v===""?"default":v,
+        set:(v)=>v===""?"https://unsplash.com/photos/vagator-or-ozran-beach-aerial-panoramic-view-in-north-goa-india-SI9OBANtEx0":v,
     },
     price:Number,
     location:String,
