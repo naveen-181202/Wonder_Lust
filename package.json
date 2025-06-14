@@ -13,7 +13,11 @@
     "ejs-mate": "^4.0.0",
     "express": "^5.1.0",
     "method-override": "^3.0.0",
+<<<<<<< HEAD
     "mongoose": "^8.15.1",
+=======
+    "mongoose": "^8.14.3",
+>>>>>>> bda4d6d5aaf3fdb88268d8e175e1eb444bbec6a5
     "nodemon": "^3.1.10"
   },
   "repository": {
