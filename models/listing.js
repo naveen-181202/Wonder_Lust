@@ -11,7 +11,7 @@ const listingSchema=new Schema({
     image:{
         type:String,
         default:"default",
-        set:(v)=>v===""?"https://unsplash.com/photos/vagator-or-ozran-beach-aerial-panoramic-view-in-north-goa-india-SI9OBANtEx0":v,
+        set: (v) => v === "" ?"https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2":v,
     },
     price:Number,
     location:String,
