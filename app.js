@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV!="production"){
+    require('dotenv').config();
+}
+
 const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
@@ -45,9 +49,9 @@ const sessionOptions={
     },
 };
 
-app.get('/', (req, res) => {
-    res.send("Hi , I am root");
-})
+// app.get('/', (req, res) => {
+//     res.send("Hi , I am root");
+// })
 
 app.use(session(sessionOptions));
 app.use(flash());
@@ -61,8 +65,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req,res,next)=>{
+    //local variables used in ejs
     res.locals.success=req.flash("success");
     res.locals.error = req.flash("error");
+    res.locals.currUser=req.user;//store current user info
     next();
 })
 

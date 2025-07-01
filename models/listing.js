@@ -9,9 +9,11 @@ const listingSchema=new Schema({
     },
     description:String,
     image:{
-        type:String,
-        default:"default",
-        set: (v) => v === "" ?"https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2":v,
+        url:String,
+        filename:String,
+        // type:String,
+        // default:"default",
+        // set: (v) => v === "" ?"https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2":v,
     },
     price:Number,
     location:String,
@@ -22,6 +24,10 @@ const listingSchema=new Schema({
             ref: "Review",
         },
     ],
+    owner:{
+        type:Schema.Types.ObjectId,
+        ref: "User",
+    },
 });
 
 
